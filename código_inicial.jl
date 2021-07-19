@@ -22,7 +22,7 @@ y=20
 z=10
 ###################################variáveis do comprimento, largura e altura da nuvem
 N=500 #número de átomos na nuvem
-densidade=N/(x*y*z)#eq da densidade
+ρ =N/(x*y*z)#eq da densidade
 r=zeros(N,3) #matriz da posição dos átomos: (x,y,z) de cada N átomos - matriz com N linhas e 3 colunas: x,y,z
 X_atoms=rand(N)*x .-x/2
 Y_atoms=rand(N)*y .-y/2
@@ -62,7 +62,7 @@ background_color_legend = :white,
 background_color_subplot = :white,
 foreground_color_legend = :black
 )
-
+savefig("fig1__N={$N}__Densidade={$ρ}__K={$k}.png")
 
 a=0
 
