@@ -7,3 +7,5 @@ function teste(a::Number,b::Number)
     return resultado   
 end
 resultado=teste(100,8) 
+
+

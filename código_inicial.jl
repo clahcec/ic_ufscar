@@ -73,59 +73,25 @@ foreground_color_legend = :black
 )
 savefig("fig1__N={$N}__Densidade={$ρ}__K={$k}.png")
 
- #=teste distância correta entre atomos
-while true 
-    X_atoms_1=rand()*x  
-    Y_atoms_1=rand()*y  
-    Z_atoms_1=rand()*z  
-    A= (X_atoms_1,Y_atoms_1,Z_atoms_1)
+#teste distância correta entre atomos
+#while true 
+X_atoms_1=rand()*x  
+Y_atoms_1=rand()*y  
+Z_atoms_1=rand()*z  
+A= [X_atoms_1,Y_atoms_1,Z_atoms_1]
 
-    X_atoms_2=rand()*x  
-    Y_atoms_2=rand()*y  
-    Z_atoms_2=rand()*z  
-    B= (X_atoms_2,Y_atoms_2,Z_atoms_2)
 
-    m=zeros(2,3)
-    distância_entre_os_pontos= √((X_atoms_1-X_atoms_2)^2 + (Y_atoms_1-Y_atoms_2)^2 +(Z_atoms_1-Z_atoms_2)^2)
-    a=0     
-    while true
-    
-        if distância_entre_os_pontos >= 1/(10√(ρ)) , a<=N
-            m[1,1] = X_atoms_1
-            m[1,2] = Y_atoms_1
-            m[1,3] = Z_atoms_1
-            m[2,1] = X_atoms_2
-            m[2,2] = Y_atoms_2
-            m[2,3] = Z_atoms_2
-            a=a+1
-        else 
-            if a>N
-                break
+m=zeros(2,3)
+m[1,:] = A
 
-                
+a=0     
+
+include("test_2.jl")
+B=encontrandoponto(A,x,y,z,ρ)
+distância_entre_os_pontos= norm(A.-B) 
+
+          
+             
 
 
         
-
-
-
-
-
-
-#=
-a=0
-
-for i in 1:10
-    a=a+i
-end
-a
-
-a=0
-while true
-    a+=1
-    if a==3
-        break
-    end
-end
-a
-=#
