@@ -23,7 +23,7 @@ x=150
 y=200
 z=100
 ###################################variáveis do comprimento, largura e altura da nuvem
-N=500 #número de átomos na nuvem
+N=1000 #número de átomos na nuvem
 ρ=N/(x*y*z)#eq da densidade
 
 #preenchendo da matriz da posição dos atomos (x,y,z)
@@ -34,7 +34,7 @@ r[:,3]=Z_atoms #preenchendo todas as linhas da coluna 1 da matriz r da posição
 
 #plot
 tamanho=1000 #tamanho da figura
-Limite=120 #limite da
+Limite=120 #limite da figura
 
 gr()
 theme(:vibrant)
@@ -74,12 +74,12 @@ r=encontrandopontos(N,x,y,z,ρ)
 
 #gerando a matriz da distância entre os átomos
 R_jk = Distances.pairwise(Euclidean(), r, r, dims = 1)  
-
+#=
 #mudando o valor da diagonal ponto a ponto         
 R_jk[LinearAlgebra.diagind(R_jk)]= #range(1,500,length=500) ou .=valor
 
 minimum(R_jk) #calculo do mínimo
-
+=#
 
 
         
