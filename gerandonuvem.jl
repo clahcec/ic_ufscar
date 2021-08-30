@@ -31,9 +31,9 @@ function encontrandopontos(N,x,y,z,ρ) #definição da função que gera a matri
     end
     
     return matriz_pontos_validos
-end
 
-function criando_matriz_das_distancias(A::Array, b::Array)
+
+ function criando_matriz_das_distancias(A::Array, b::Array)
 
     n_rows = size(A, 1) #NÚMERO DE ATOMOS                                                                                                                # Aqui temos a contagem dos N atomos novamente
     distanceAb = zeros(n_rows) #MATRIZ DAS DISTÂNCIAS RELATIVAS                                                                                                         # Define uma matriz que vai guardar a distancia entre os atomos
